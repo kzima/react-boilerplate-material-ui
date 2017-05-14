@@ -1,0 +1,9 @@
+.serif-font {
+  font-family: Georgia, serif;
+}
+
+.display {
+  composes: serif-font;
+  font-size: 30px;
+  line-height: 35px;
+}
