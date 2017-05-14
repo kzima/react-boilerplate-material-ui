@@ -1,16 +1,16 @@
-import * as ActionTypes from '../actions'
+import * as ActionTypes from "../actions";
 
 // Updates error message to notify about the failed fetches.
 const user = (state = null, action) => {
-  const { type, error } = action
+	const { type, error } = action;
 
-  if (type === ActionTypes.USER_SUCCESS) {
-    return {...state, ...action.response}
-  } else if (error) {
-    return action.error
-  }
+	if (type === ActionTypes.USER_SUCCESS) {
+		return { ...state, ...action.response };
+	} else if (error) {
+		return action.error;
+	}
 
-  return state
-}
+	return state;
+};
 
 export default user;

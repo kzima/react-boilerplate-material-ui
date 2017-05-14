@@ -1,21 +1,21 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React, { Component } from "react";
+import { connect } from "react-redux";
 
 function mapStateToProps(state) {
-  return { state: state }
+	return { state };
 }
 
 class AccountPage extends Component {
-  constructor() {
-    super();
-  }
+	constructor() {
+		super();
+	}
 
-  render() {
-    return <div>
+	render() {
+		return (<div>
       Page 2!
-      
-    </div>
-  }
+
+    </div>);
+	}
 }
 
-export default connect(mapStateToProps)(AccountPage)
+export default connect(mapStateToProps)(AccountPage);
