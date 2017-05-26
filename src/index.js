@@ -30,10 +30,10 @@ const router = routerMiddleware(history);
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(
-    rootReducer,
-    composeEnhancers(
-        applyMiddleware(thunk, api, createLogger(), router),
-    ),
+	rootReducer,
+	composeEnhancers(
+		applyMiddleware(thunk, api, createLogger(), router),
+	),
 );
 
 const render = (Component) => {
@@ -47,7 +47,7 @@ const render = (Component) => {
 				</ConnectedRouter>
 			</Provider>
 		</AppContainer>,
-    document.getElementById("root"),
+	document.getElementById("root"),
   );
 };
 
@@ -55,7 +55,7 @@ render(App);
 
 if (module.hot) {
 	module.hot.accept("./reducers", () => {
-	  render(App);
+		render(App);
 	});
 }
 

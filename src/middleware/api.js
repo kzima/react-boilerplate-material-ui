@@ -6,15 +6,15 @@ const callApi = (endpoint) => {
 	const fullUrl = (endpoint.indexOf(API_ROOT) === -1) ? API_ROOT + endpoint : endpoint;
 
 	return fetch(fullUrl)
-    .then(response =>
-      response.json().then((json) => {
-	if (!response.ok) {
-		return Promise.reject(json);
-	}
+	.then(response =>
+		response.json().then((json) => {
+			if (!response.ok) {
+				return Promise.reject(json);
+			}
 
-	return Object.assign({}, json);
-}),
-    );
+			return Object.assign({}, json);
+		}),
+	);
 };
 
 // Action key that carries API call info interpreted by this Redux middleware.
@@ -38,9 +38,7 @@ export default store => next => (action) => {
 	if (typeof endpoint !== "string") {
 		throw new Error("Specify a string endpoint URL.");
 	}
-//   if (!schema) {
-//     throw new Error('Specify one of the exported Schemas.')
-//   }
+
 	if (!Array.isArray(types) || types.length !== 3) {
 		throw new Error("Expected an array of three action types.");
 	}
@@ -58,13 +56,13 @@ export default store => next => (action) => {
 	next(actionWith({ type: requestType }));
 
 	return callApi(endpoint).then(
-    response => next(actionWith({
-	response,
-	type: successType,
-})),
-    error => next(actionWith({
-	type: failureType,
-	error: error.message || "Something bad happened",
-})),
-  );
+		response => next(actionWith({
+			response,
+			type: successType,
+		})),
+		error => next(actionWith({
+			type: failureType,
+			error: error.message || "Something bad happened",
+		})),
+	);
 };

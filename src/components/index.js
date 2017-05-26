@@ -1,3 +1,1 @@
-import GithubUser from './githubUser/GithubUser';
-
-export { GithubUser };
+export GithubUser from "./GithubUser/GithubUser";

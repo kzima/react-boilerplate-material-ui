@@ -8,7 +8,7 @@ export default () => (
 	<div>
 		<span>App </span>
 		<Link to={"/home"}>home </Link> |
-        <Link to={"/account"}>account </Link>
+		<Link to={"/account"}>account </Link>
 		<Route path="/" exact render={() => <Redirect to="/home" />} />
 		<Route path="/home" component={HomePage} />
 		<Route path="/account" component={AccountPage} />

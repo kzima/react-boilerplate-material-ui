@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-import { GithubUser } from "../components";
+import GithubUser from "../components/GithubUser";
 import { fetchUser } from "../actions";
 
 class HomePage extends Component {
@@ -27,13 +27,13 @@ class HomePage extends Component {
 	render() {
 		const { user } = this.props;
 		return (<form onSubmit={this.search}>
-        Github username <input type="text" value={this.state.value} onChange={this.changed} /><button type="submit">Search</button>
+			Github username <input type="text" value={this.state.value} onChange={this.changed} /><button type="submit">Search</button>
 			{user && <GithubUser user={user} />}
 		</form>);
 	}
 }
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
 	const { user } = state;
 	return {
 		user,
