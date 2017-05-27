@@ -1,154 +1,160 @@
 {
-	"scripts": {
-		"start": "webpack-dev-server --port 3000 --config webpack.config.js --progress --colors",
-		"build": "rimraf dist && cross-env NODE_ENV=production webpack -p --config webpack.config.production.js"
-	},
-	"dependencies": {
-		"classnames": "^2.2.5",
-		"es6-promise": "^4.1.0",
-		"lodash": "^4.17.4",
-		"material-ui": "^0.18.1",
-		"react": "~15.4.2",
-		"react-dev-utils": "^0.5.2",
-		"react-dom": "~15.4.2",
-		"react-redux": "~5.0.2",
-		"react-router-dom": "~4.0.0",
-		"react-router-redux": "next",
-		"react-tap-event-plugin": "^2.0.1",
-		"redux": "~3.6.0",
-		"redux-logger": "3.0.1",
-		"redux-thunk": "2.2.0",
-		"rimraf": "^2.6.1"
-	},
-	"devDependencies": {
-		"autoprefixer": "^6.7.7",
-		"babel-core": "~6.23.1",
-		"babel-eslint": "^7.2.3",
-		"babel-loader": "~6.3.0",
-		"babel-plugin-transform-export-extensions": "^6.22.0",
-		"babel-preset-es2015": "~6.22.0",
-		"babel-preset-react": "~6.23.0",
-		"babel-preset-stage-2": "~6.22.0",
-		"babel-preset-stage-1":"6.24.1",
-		"case-sensitive-paths-webpack-plugin": "^2.0.0",
-		"compression-webpack-plugin": "^0.4.0",
-		"cross-env": "^4.0.0",
-		"css-loader": "^0.28.1",
-		"eslint": "^3.15.0",
-		"eslint-config-airbnb": "^14.1.0",
-		"eslint-plugin-import": "^2.3.0",
-		"eslint-plugin-jsx-a11y": "^3.0.2 || ^4.0.0",
-		"eslint-plugin-react": "^6.9.0",
-		"extract-text-webpack-plugin": "^2.1.0",
-		"file-loader": "^0.11.1",
-		"history": "4.6.1",
-		"html-webpack-plugin": "^2.28.0",
-		"normalize.css": "^7.0.0",
-		"postcss-loader": "^2.0.5",
-		"react-dev-utils": "^0.5.2",
-		"react-hot-loader": "3.0.0-beta.6",
-		"style-loader": "^0.17.0",
-		"url-loader": "^0.5.8",
-		"webpack": "~2.2.1",
-		"webpack-dev-server": "~2.3.0",
-		"webpack-manifest-plugin": "^1.1.0"
-	},
-	"engines": {
-		"node": "6.9.1"
-	},
-	"babel": {
-		"presets": [
-			[
-				"es2015",
-				{
-					"modules": false
-				}
-			],
-			"stage-1",
-			"react"
-		],
-		"plugins": [
-			"react-hot-loader/babel"
-		]
-	},
-	"eslintConfig": {
-		"parser": "babel-eslint",
-		"extends": "airbnb",
-		"plugins": [
-			"react",
-			"jsx-a11y",
-			"import"
-		],
-		"env": {
-			"browser": true,
-			"node": true,
-			"jest": true,
-			"es6": true
-		},
-		"rules": {
-			"global-require": 0,
-			"no-underscore-dangle": 0,
-			"no-console": 0,
-			"quotes": [
-				2,
-				"double"
-			],
-			"indent": [
-				2,
-				"tab"
-			],
-			"no-tabs": 0,
-			"react/prop-types": 0,
-			"react/jsx-indent": [
-				2,
-				"tab"
-			],
-			"react/jsx-indent-props": [
-				2,
-				"tab"
-			],
-			"max-len": [
-				"error",
-				200
-			],
-			"react/jsx-filename-extension": [
-				1,
-				{
-					"extensions": [
-						".js",
-						".jsx"
-					]
-				}
-			],
-			"import/no-extraneous-dependencies": [
-				2,
-				{
-					"devDependencies": true
-				}
-			]
-		},
-		"globals": {
-			"__CLIENT__": true,
-			"__SERVER__": true,
-			"__DISABLE_SSR__": true,
-			"__DEV__": true,
-			"webpackIsomorphicTools": true,
-			"window": true
-		},
-		"static": {
-			"paths": [
-				"/home",
-				"/login"
-			],
-			"outputPath": "build"
-		}
-	},
-	"static": {
-		"paths": [
-			"/",
-			"/home",
-			"/account"
-		],
-		"outputPath": "dist"
-	}
+  "scripts": {
+    "start": "webpack-dev-server --port 3000 --config webpack.config.js --progress --colors",
+    "build": "rimraf dist && cross-env NODE_ENV=production webpack -p --config webpack.config.production.js",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "es6-promise": "^4.1.0",
+    "lodash": "^4.17.4",
+    "material-ui": "^0.18.1",
+    "react": "~15.4.2",
+    "react-dev-utils": "^0.5.2",
+    "react-dom": "~15.4.2",
+    "react-redux": "~5.0.2",
+    "react-router-dom": "~4.0.0",
+    "react-router-redux": "next",
+    "react-tap-event-plugin": "^2.0.1",
+    "redux": "~3.6.0",
+    "redux-logger": "3.0.1",
+    "redux-thunk": "2.2.0"
+  },
+  "devDependencies": {
+    "@storybook/react": "3.0.0-alpha.0",
+    "@storybook/addons":"3.0.0-alpha.0",
+    "@storybook/addon-actions":"3.0.0-alpha.0",
+    "@storybook/addon-links":"3.0.0-alpha.0",
+    "autoprefixer": "^6.7.7",
+    "babel-core": "~6.23.1",
+    "babel-eslint": "^7.2.3",
+    "babel-loader": "~6.3.0",
+    "babel-plugin-transform-export-extensions": "^6.22.0",
+    "babel-preset-es2015": "~6.22.0",
+    "babel-preset-react": "~6.23.0",
+    "babel-preset-stage-1": "6.24.1",
+    "babel-preset-stage-2": "~6.22.0",
+    "case-sensitive-paths-webpack-plugin": "^2.0.0",
+    "compression-webpack-plugin": "^0.4.0",
+    "cross-env": "^4.0.0",
+    "css-loader": "^0.28.1",
+    "eslint": "^3.15.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.3.0",
+    "eslint-plugin-jsx-a11y": "^3.0.2 || ^4.0.0",
+    "eslint-plugin-react": "^6.9.0",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "file-loader": "^0.11.1",
+    "history": "4.6.1",
+    "html-webpack-plugin": "^2.28.0",
+    "normalize.css": "^7.0.0",
+    "postcss-loader": "^2.0.5",
+    "react-dev-utils": "^0.5.2",
+    "react-hot-loader": "3.0.0-beta.6",
+    "rimraf": "^2.6.1",
+    "style-loader": "^0.17.0",
+    "url-loader": "^0.5.8",
+    "webpack": "~2.2.1",
+    "webpack-dev-server": "~2.3.0",
+    "webpack-manifest-plugin": "^1.1.0"
+  },
+  "engines": {
+    "node": "6.9.1"
+  },
+  "babel": {
+    "presets": [
+      [
+        "es2015",
+        {
+          "modules": false
+        }
+      ],
+      "stage-1",
+      "react"
+    ],
+    "plugins": [
+      "react-hot-loader/babel"
+    ]
+  },
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "extends": "airbnb",
+    "plugins": [
+      "react",
+      "jsx-a11y",
+      "import"
+    ],
+    "env": {
+      "browser": true,
+      "node": true,
+      "jest": true,
+      "es6": true
+    },
+    "rules": {
+      "global-require": 0,
+      "no-underscore-dangle": 0,
+      "no-console": 0,
+      "quotes": [
+        2,
+        "double"
+      ],
+      "indent": [
+        2,
+        "tab"
+      ],
+      "no-tabs": 0,
+      "react/prop-types": 0,
+      "react/jsx-indent": [
+        2,
+        "tab"
+      ],
+      "react/jsx-indent-props": [
+        2,
+        "tab"
+      ],
+      "max-len": [
+        "error",
+        200
+      ],
+      "react/jsx-filename-extension": [
+        1,
+        {
+          "extensions": [
+            ".js",
+            ".jsx"
+          ]
+        }
+      ],
+      "import/no-extraneous-dependencies": [
+        2,
+        {
+          "devDependencies": true
+        }
+      ]
+    },
+    "globals": {
+      "__CLIENT__": true,
+      "__SERVER__": true,
+      "__DISABLE_SSR__": true,
+      "__DEV__": true,
+      "webpackIsomorphicTools": true,
+      "window": true
+    },
+    "static": {
+      "paths": [
+        "/home",
+        "/login"
+      ],
+      "outputPath": "build"
+    }
+  },
+  "static": {
+    "paths": [
+      "/",
+      "/home",
+      "/account"
+    ],
+    "outputPath": "dist"
+  }
 }
