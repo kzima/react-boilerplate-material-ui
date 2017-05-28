@@ -4,16 +4,17 @@ import createHistory from "history/createBrowserHistory";
 import thunk from "redux-thunk";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import injectTapEventPlugin from "react-tap-event-plugin";
-
 import { AppContainer } from "react-hot-loader";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware, compose } from "redux";
 import { ConnectedRouter, routerMiddleware } from "react-router-redux";
 import { createLogger } from "redux-logger";
+import { I18nextProvider } from "react-i18next"; // as we build ourself via webpack
 
 import api from "./middleware/api";
 import App from "./App";
 import rootReducer from "./reducers";
+import i18n from "./i18n"; // initialized i18next instance
 
 import "./app.css";
 
@@ -42,7 +43,9 @@ const render = (Component) => {
 			<Provider store={store}>
 				<ConnectedRouter history={history}>
 					<MuiThemeProvider>
-						<Component />
+						<I18nextProvider i18n={i18n}>
+							<Component />
+						</I18nextProvider>
 					</MuiThemeProvider>
 				</ConnectedRouter>
 			</Provider>

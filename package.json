@@ -2,6 +2,7 @@
   "scripts": {
     "start": "webpack-dev-server --port 3000 --config webpack.config.js --progress --colors",
     "build": "rimraf dist && cross-env NODE_ENV=production webpack -p --config webpack.config.production.js",
+    "build-langs": "i18next src/ --recursive --fileFilter '*.js' --namespace common --locales en",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
@@ -22,10 +23,10 @@
     "redux-thunk": "2.2.0"
   },
   "devDependencies": {
+    "@storybook/addon-actions": "3.0.0-alpha.0",
+    "@storybook/addon-links": "3.0.0-alpha.0",
+    "@storybook/addons": "3.0.0-alpha.0",
     "@storybook/react": "3.0.0-alpha.0",
-    "@storybook/addons":"3.0.0-alpha.0",
-    "@storybook/addon-actions":"3.0.0-alpha.0",
-    "@storybook/addon-links":"3.0.0-alpha.0",
     "autoprefixer": "^6.7.7",
     "babel-core": "~6.23.1",
     "babel-eslint": "^7.2.3",
@@ -48,10 +49,16 @@
     "file-loader": "^0.11.1",
     "history": "4.6.1",
     "html-webpack-plugin": "^2.28.0",
+    "i18next": "8.3.0",
+    "i18next-browser-languagedetector": "1.0.1",
+    "i18next-localstorage-cache": "1.1.1",
+    "i18next-parser": "^0.12.0",
+    "i18next-xhr-backend": "1.4.1",
     "normalize.css": "^7.0.0",
     "postcss-loader": "^2.0.5",
     "react-dev-utils": "^0.5.2",
     "react-hot-loader": "3.0.0-beta.6",
+    "react-i18next": "4.1.0",
     "rimraf": "^2.6.1",
     "style-loader": "^0.17.0",
     "url-loader": "^0.5.8",

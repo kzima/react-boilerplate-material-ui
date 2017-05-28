@@ -1,13 +1,13 @@
 .serif-font {
-  font-family: Georgia, serif;
+	font-family: Georgia, serif;
 }
 
 .display {
-  composes: serif-font;
-  font-size: 30px;
-  line-height: 35px;
+	composes: serif-font;
+	font-size: 30px;
+	line-height: 35px;
 }
 
 .card {
-  marign: 2em;
+	marign: 2em;
 }

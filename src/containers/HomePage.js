@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { translate } from "react-i18next";
 
 import GithubUser from "../components/GithubUser";
 import { fetchUser } from "../actions";
@@ -25,9 +26,9 @@ class HomePage extends Component {
 	}
 
 	render() {
-		const { user } = this.props;
+		const { t, user } = this.props;
 		return (<form onSubmit={this.search}>
-			Github username <input type="text" value={this.state.value} onChange={this.changed} /><button type="submit">Search</button>
+			{t("common:label", { defaultValue: "Github username" })} <input type="text" value={this.state.value} onChange={this.changed} /><button type="submit">Search</button>
 			{user && <GithubUser user={user} />}
 		</form>);
 	}
@@ -40,7 +41,7 @@ const mapStateToProps = (state) => {
 	};
 };
 
-export default connect(mapStateToProps, {
+export default translate(["common"])(connect(mapStateToProps, {
 	fetchUser,
-})(HomePage);
+})(HomePage));
 

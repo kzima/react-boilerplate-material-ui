@@ -7,7 +7,7 @@ const CaseSensitivePathsPlugin = require("case-sensitive-paths-webpack-plugin");
 
 module.exports = {
 	entry: [
-				// activate HMR for React
+		// activate HMR for React
 		"react-hot-loader/patch",
 
 		// bundle the client for webpack-dev-server
@@ -26,42 +26,42 @@ module.exports = {
 	},
 	output: {
 		filename: "bundle.js",
-				// the output bundle
 
-		path: resolve(__dirname, "dist"),
+		// the output bundle
+		path: resolve(__dirname),
 
 		publicPath: "/",
-						// necessary for HMR to know where to load the hot update chunks
+		// necessary for HMR to know where to load the hot update chunks
 	},
 	context: resolve(__dirname, "src"),
 	devtool: "inline-source-map",
 	devServer: {
 		hot: true,
-				// enable HMR on the server
+		// enable HMR on the server
 
-		contentBase: resolve(__dirname, "dist"),
-				// match the output path
+		contentBase: resolve(__dirname),
+		// match the output path
 
 		publicPath: "/",
-				// match the output `publicPath`
+		// match the output `publicPath`
 
-				// fallback to root for other urls
+		// fallback to root for other urls
 		historyApiFallback: true,
 	},
 	module: {
 		rules: [
-					// Disable require.ensure as it's not a standard language feature.
-					{ parser: { requireEnsure: false } },
+			// Disable require.ensure as it's not a standard language feature.
+			{ parser: { requireEnsure: false } },
 
-					// ** ADDING/UPDATING LOADERS **
-					// The "url" loader handles all assets unless explicitly excluded.
-					// The `exclude` list *must* be updated with every change to loader extensions.
-					// When adding a new loader, you must add its `test`
-					// as a new entry in the `exclude` list for "url" loader.
+			// ** ADDING/UPDATING LOADERS **
+			// The "url" loader handles all assets unless explicitly excluded.
+			// The `exclude` list *must* be updated with every change to loader extensions.
+			// When adding a new loader, you must add its `test`
+			// as a new entry in the `exclude` list for "url" loader.
 
-					// "file" loader makes sure those assets get served by WebpackDevServer.
-					// When you `import` an asset, you get its (virtual) filename.
-					// In production, they would get copied to the `build` folder.
+			// "file" loader makes sure those assets get served by WebpackDevServer.
+			// When you `import` an asset, you get its (virtual) filename.
+			// In production, they would get copied to the `build` folder.
 			{
 				exclude: [
 					/\.html$/,
@@ -78,9 +78,9 @@ module.exports = {
 					name: "static/media/[name].[hash:8].[ext]",
 				},
 			},
-					// "url" loader works like "file" loader except that it embeds assets
-					// smaller than specified limit in bytes as data URLs to avoid requests.
-					// A missing `test` is equivalent to a match.
+			// "url" loader works like "file" loader except that it embeds assets
+			// smaller than specified limit in bytes as data URLs to avoid requests.
+			// A missing `test` is equivalent to a match.
 			{
 				test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
 				loader: "url-loader",
@@ -96,17 +96,17 @@ module.exports = {
 				loader: "babel-loader",
 				options: {
 
-							// This is a feature of `babel-loader` for webpack (not Babel itself).
-							// It enables caching results in ./node_modules/.cache/babel-loader/
-							// directory for faster rebuilds.
+					// This is a feature of `babel-loader` for webpack (not Babel itself).
+					// It enables caching results in ./node_modules/.cache/babel-loader/
+					// directory for faster rebuilds.
 					cacheDirectory: true,
 				},
 			},
-					// "postcss" loader applies autoprefixer to our CSS.
-					// "css" loader resolves paths in CSS and adds assets as dependencies.
-					// "style" loader turns CSS into JS modules that inject <style> tags.
-					// In production, we use a plugin to extract that CSS to a file, but
-					// in development "style" loader enables hot editing of CSS.
+			// "postcss" loader applies autoprefixer to our CSS.
+			// "css" loader resolves paths in CSS and adds assets as dependencies.
+			// "style" loader turns CSS into JS modules that inject <style> tags.
+			// In production, we use a plugin to extract that CSS to a file, but
+			// in development "style" loader enables hot editing of CSS.
 			{
 				test: /\.css$/,
 				use: [
@@ -137,8 +137,8 @@ module.exports = {
 					},
 				],
 			},
-					// ** STOP ** Are you adding a new loader?
-					// Remember to add the new extension(s) to the "url" loader exclusion list.
+			// ** STOP ** Are you adding a new loader?
+			// Remember to add the new extension(s) to the "url" loader exclusion list.
 		],
 	},
 	plugins: [
