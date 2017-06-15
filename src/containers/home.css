@@ -1,0 +1,180 @@
+.flex {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.home {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	& section {
+		padding: 20px 0;
+		text-align: center;
+	}
+	.phone, .beacons, .touch {
+		padding: 1em;
+	}
+	& .phone {
+		position: relative;
+		max-width: 200px;
+		& .content {
+			margin: 3em;
+			position: absolute;
+			top: 13px;
+			bottom: 19px;
+			left: -18px;
+			right: -19px;
+			&.one {
+				background: #b275d1;
+			}
+			&.two {
+				background: #3ec3f3;
+			}
+			&.three {
+				background: #9ed7ba;
+			}
+		}
+	}
+	& .beacons {
+		position: relative;
+		margin-bottom: 1em;
+		& img {
+			max-width: 200px;
+		}
+		& .touch {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: -20px;
+			right: -20px;
+			display: flex;
+			& button {
+				width: 100%;
+				background: transparent;
+				border: 0;
+				outline: 0;
+				cursor: pointer;
+			}
+		}
+	}
+	& h1 {
+		margin: 1em;
+		margin-bottom: 0.5em;
+		font-size: 2em;
+		color: #00d4aa;
+	}
+	& h2 {
+		max-width: 80%;
+		margin: 0 auto 3em;
+		font-size: 1em;
+	}
+	& h3 {
+		font-size: 30px;
+		margin: 40px;
+		color: #00d4aa;
+		text-align: center;
+	}
+	& .features {
+		display: flex;
+		justify-content: space-between;
+		flex-direction: column;
+		width: 80%;
+		padding: 2em;
+		padding-top: 0;
+		& h2 {
+			font-size: 1.2em;
+		}
+		& > div {
+			padding: 1em;
+			flex: 0 1 20%;
+			text-align: center;
+			font-size: 0.8em;
+			display: flex;
+			flex-flow: column;
+		}
+		& img {
+			height: 150px;
+			padding-bottom: 1em;
+		}
+	}
+	& .call-to-action {
+		padding: 2em;
+	}
+}
+
+@media screen and (min-width: 600px) {
+	.home {
+		& .phone, & .beacons, & .touch {
+			padding: 3em;
+		}
+		& .banner-demo {
+			flex-direction: row;
+			& .phone {
+				& .content {
+					top: 45px;
+					bottom: 51px;
+					left: 13px;
+					right: 13px;
+				}
+			}
+		}
+		& .beacons {
+			& img {
+				max-width: 400px;
+			}
+			margin-bottom: 0;
+		}
+		& .features {
+			flex-direction: row;
+		}
+	}
+}
+
+
+.pulse {
+	display: none;
+	margin-left: calc(50% + 1px);
+	margin-top: 25px;
+	border-radius: 80%;
+	background: rgba(255, 231, 147, 0.1);
+	width: 2px;
+	height: 2px;
+	cursor: pointer;
+	box-shadow: 0 0 0 rgba(255, 231, 147, 0.8);
+	animation: pulse 1s infinite;
+}
+.active {
+	& .pulse {
+		display: block;
+	}
+}
+.pulse:hover {
+	animation: none;
+}
+
+@-webkit-keyframes pulse {
+	0% {
+	-webkit-box-shadow: 0 0 0 0 rgba(255,231,147, 0.7);
+	}
+	70% {
+		-webkit-box-shadow: 0 0 0 30px rgba(255,231,147, 0);
+	}
+	100% {
+		-webkit-box-shadow: 0 0 0 0 rgba(255,231,147, 0);
+	}
+}
+@keyframes pulse {
+	0% {
+	-moz-box-shadow: 0 0 0 0 rgba(255,231,147, 0.7);
+	box-shadow: 0 0 0 0 rgba(255,231,147, 0.7);
+	}
+	70% {
+		-moz-box-shadow: 0 0 0 30px rgba(255,231,147, 0);
+		box-shadow: 0 0 0 30px rgba(255,231,147, 0);
+	}
+	100% {
+		-moz-box-shadow: 0 0 0 0 rgba(255,231,147, 0);
+		box-shadow: 0 0 0 0 rgba(255,231,147, 0);
+	}
+}

@@ -1,0 +1,89 @@
+body, html {
+	font-size: 14px;
+}
+
+@media screen and (min-width: 600px) {
+body, html {
+		font-size: 16px;
+	}
+}
+
+h1, h2, h3 {
+	font-family: 'Open Sans', sans-serif;
+	color: #4d4d4d;
+}
+
+p, a {
+	font-family: 'Open Sans', sans-serif;
+}
+
+.menu-mobile {
+	display: inline-block;
+}
+.menu-desktop {
+	display: none !important;
+}
+.logo {
+	max-width: 120px;
+	font-family: 'Righteous', cursive;
+}
+
+@media (min-width: 600px) {
+	.logo {
+		max-width: initial;
+	}
+	.menu-mobile {
+		display: none !important;
+	}
+	.menu-desktop {
+		display: flex !important;
+	}
+}
+
+.btn-contact {
+	margin: 0 !important;
+}
+ .menu-contact {
+	padding-left: 10px;
+	padding-right: 10px;
+	& a {
+	 color: #00d4aa;
+	 text-decoration: none;
+	}
+	& .form {
+	 padding: 20px;
+	& > div {
+		width: 100% !important;
+	 }
+	}
+ }
+
+.text-right {
+	text-align: right;
+}
+
+.banner {
+	width: 100%;
+	background: radial-gradient(rgba(232,232,232, 0.1), rgba(232,232,232, 0.25), rgba(232,232,232, 0.3));
+	&.summary {
+		flex-direction: column;
+		padding-bottom: 2em;
+		& h3 {
+		margin: 40px;
+		}
+	}
+	&.white {
+		background: #fff;
+	}
+}
+.banner-demo {
+	flex-direction: column;
+}
+
+footer {
+	text-align: center;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	font-size: 14px;
+	padding-top: 2em;
+	padding-bottom: 2em;
+}

@@ -110,40 +110,22 @@ module.exports = {
 			{
 				test: /\.css$/,
 				loader: ExtractTextPlugin.extract(
-					Object.assign(
-						{
-							fallback: "style-loader",
-							use: [
+					Object.assign({
+						fallback: "style-loader",
+						use: [
 								{
 									loader: "css-loader",
 									options: {
 										importLoaders: 1,
 										minimize: true,
 										sourceMap: true,
-										modules: true,
-										localIdentName: "[path][name]__[local]--[hash:base64:5]",
 									},
 								},
 								{
 									loader: "postcss-loader",
-									options: {
-										ident: "postcss", // https://webpack.js.org/guides/migrating/#complex-options
-										plugins: () => [
-											autoprefixer({
-												browsers: [
-													">1%",
-													"last 4 versions",
-													"Firefox ESR",
-													"not ie < 9", // React doesn't support IE8 anyway
-												],
-											}),
-										],
-									},
 								},
 							],
-						},
-					),
-				),
+					})),
 				// Note: this won't work without `new ExtractTextPlugin()` in `plugins`.
 			},
 			// ** STOP ** Are you adding a new loader?

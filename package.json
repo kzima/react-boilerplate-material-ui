@@ -1,9 +1,10 @@
 {
   "scripts": {
     "start": "webpack-dev-server --port 3000 --config webpack.config.js --progress --colors",
-    "build": "rimraf dist && cross-env NODE_ENV=production webpack -p --config webpack.config.production.js",
+    "build": "rimraf dist && cross-env NODE_ENV=production webpack -p --config webpack.config.production.js && cross-env NODE_ENV=production react-static",
     "build-langs": "i18next src/ --recursive --fileFilter '*.js' --namespace common --locales en",
     "storybook": "start-storybook -p 6006",
+    "build-static": "react-static",
     "build-storybook": "build-storybook"
   },
   "dependencies": {
@@ -56,9 +57,12 @@
     "i18next-xhr-backend": "1.4.1",
     "normalize.css": "^7.0.0",
     "postcss-loader": "^2.0.5",
+    "postcss-import": "^10.0.0",
+    "postcss-nested": "^2.0.2",
     "react-dev-utils": "^0.5.2",
     "react-hot-loader": "3.0.0-beta.6",
     "react-i18next": "4.1.0",
+    "react-static-generator": "^0.1.2",
     "rimraf": "^2.6.1",
     "style-loader": "^0.17.0",
     "url-loader": "^0.5.8",
@@ -158,9 +162,7 @@
   },
   "static": {
     "paths": [
-      "/",
-      "/home",
-      "/account"
+      "/"
     ],
     "outputPath": "dist"
   }
